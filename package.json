@@ -5,12 +5,10 @@
   "scripts": {
     "start": "nodemon --config nodemon.json server.js",
     "build-tail": "NODE_ENV=production tailwindcss build -i styles/tailwindcss.css -o assets/styles.css",
-    "watch-tail": "NODE_ENV=development tailwindcss build -i styles/tailwindcss.css -o assets/styles.css --watch",
-    "build": "npm run build-tail",
-    "watch": "npm run watch-tail",
+    "watch-tail": "NODE_ENV=development tailwindcss -i styles/tailwindcss.css -o assets/styles.css",
     "browser-sync": "browser-sync start",
-    "dev": "npm run watch & npm run start",
-    "prod": "npm run build & npm run start"
+    "dev": "concurrently \"npm run watch-tail\" \"npm run start\"",
+    "prod": "npm run build-tail & npm run start"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +26,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.16",
     "browser-sync": "^2.29.3",
+    "concurrently": "^8.2.2",
     "nodemon": "^3.0.1",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5",
