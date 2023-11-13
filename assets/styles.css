@@ -1181,6 +1181,12 @@ select {
   transition-duration: 300ms;
 }
 
+.my-class {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+  background-color: blue;
+}
+
 .hover\:border-2:hover {
   border-width: 2px;
 }

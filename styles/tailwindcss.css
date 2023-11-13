@@ -3,3 +3,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.my-class {
+  @apply text-red-500;
+  background-color: blue;
+}
